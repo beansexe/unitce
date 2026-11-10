@@ -1,0 +1,193 @@
+0→W
+0→G
+Lbl AA
+Menu("UNIT CALC","NEW EXPRESSION",AF,"CONFIG",AB,"HELP",AE,"QUIT",AZ)
+Lbl AB
+Menu("DUAL OUTPUT","ON: SI + IMPERIAL",AC,"OFF: FIRST SYSTEM",AD,"BACK",AA)
+Lbl AC
+1→G
+Goto AA
+Lbl AD
+0→G
+Goto AA
+Lbl AE
+ClrHome
+Disp "BLANK VALUE = 1","CHOOSE QUANTITY/UNIT","FIRST SYSTEM = RESULT","X AND / BEFORE + -","MASS: LBM OR SLUG","NO EQUATION SOLVING"
+Pause
+Goto AA
+Lbl AF
+0→T
+1→O
+0→W
+{0}→ʟUCV
+{0}→ʟUCM
+{0}→ʟUCL
+{0}→ʟUCT
+{0}→ʟUCOP
+Goto AL
+Lbl AG
+ClrHome
+Disp "EXPRESSION TERMS:",T
+If T>0
+Then
+Disp "LAST TERM IN SI:",ʟUCV(T)
+End
+Menu("NEXT","MULTIPLY",AH,"DIVIDE",AI,"ADD",AJ,"SUBTRACT",AK,"RESULT",AQ,"REVIEW / UNDO",AN,"HOME",AA)
+Lbl AH
+1→O
+Goto AL
+Lbl AI
+2→O
+Goto AL
+Lbl AJ
+3→O
+Goto AL
+Lbl AK
+4→O
+Goto AL
+Lbl AL
+If T=40
+Then
+Disp "40 TERM LIMIT"
+Pause
+End
+If T=40
+Goto AG
+prgmUCVAL
+If Z=0
+Goto AM
+prgmUCPICK
+If Z=0
+Goto AM
+If T=0
+W→R
+T+1→T
+N*F→ʟUCV(T)
+B→ʟUCM(T)
+C→ʟUCL(T)
+D→ʟUCT(T)
+O→ʟUCOP(T)
+Goto AG
+Lbl AM
+If T=0
+Goto AA
+Goto AG
+Lbl AN
+Menu("REVIEW / UNDO","REVIEW IN SI",AP,"UNDO LAST TERM",AO,"BACK",AG)
+Lbl AO
+If T>0
+T-1→T
+If T=0
+Goto AF
+Goto AG
+Lbl AP
+For(J,1,T)
+ClrHome
+Disp "TERM",J,"OP:1=X 2=/ 3=+ 4=-",ʟUCOP(J),"SI VALUE",ʟUCV(J),"M L T EXPONENTS"
+Disp {ʟUCM(J),ʟUCL(J),ʟUCT(J)}
+Pause
+End
+Goto AN
+Lbl AQ
+If T=0
+Goto AA
+T→P
+ʟUCV→ʟUV
+ʟUCM→ʟUM
+ʟUCL→ʟUL
+ʟUCT→ʟUT
+ʟUCOP→ʟUO
+2→J
+Lbl AR
+If J>P
+Goto AT
+If ʟUO(J)>2
+Goto AS
+1→S
+If ʟUO(J)=2
+⁻1→S
+If (S=⁻1) and (ʟUV(J)=0)
+Goto AY
+ʟUV(J-1)*ʟUV(J)^S→ʟUV(J-1)
+ʟUM(J-1)+S*ʟUM(J)→ʟUM(J-1)
+ʟUL(J-1)+S*ʟUL(J)→ʟUL(J-1)
+ʟUT(J-1)+S*ʟUT(J)→ʟUT(J-1)
+For(I,J,P-1)
+ʟUV(I+1)→ʟUV(I)
+ʟUM(I+1)→ʟUM(I)
+ʟUL(I+1)→ʟUL(I)
+ʟUT(I+1)→ʟUT(I)
+ʟUO(I+1)→ʟUO(I)
+End
+P-1→P
+Goto AR
+Lbl AS
+J+1→J
+Goto AR
+Lbl AT
+ʟUV(1)→E
+ʟUM(1)→B
+ʟUL(1)→C
+ʟUT(1)→D
+0→K
+If P>1
+Then
+For(J,2,P)
+If (B≠ʟUM(J)) or (C≠ʟUL(J)) or (D≠ʟUT(J))
+1→K
+1→S
+If ʟUO(J)=4
+⁻1→S
+E+S*ʟUV(J)→E
+End
+End
+If K=1
+Goto AX
+Lbl AU
+ClrHome
+R→H
+prgmUCOUT
+Disp "RESULT",E/F,Str2
+If G=1
+Then
+3-R→H
+prgmUCOUT
+Disp "ALSO",E/F,Str2
+End
+Disp "EXPONENTS M L T",{B,C,D}
+Pause
+Menu("RESULT","CONVERT",AV,"EXPRESSION",AG,"HOME",AA)
+Lbl AV
+B→X
+C→Y
+D→A
+prgmUCPICK
+If Z=0
+Goto AW
+If (B≠X) or (C≠Y) or (D≠A)
+Then
+Disp "INCOMPATIBLE UNIT"
+Pause
+Else
+ClrHome
+Disp E/F,Str2
+Pause
+End
+Lbl AW
+X→B
+Y→C
+A→D
+Goto AU
+Lbl AX
+ClrHome
+Disp "CANNOT ADD/SUBTRACT","DIFFERENT DIMENSIONS"
+Pause
+Goto AG
+Lbl AY
+ClrHome
+Disp "DIVISION BY ZERO"
+Pause
+Goto AG
+Lbl AZ
+ClrHome
+Stop

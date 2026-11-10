@@ -1,0 +1,154 @@
+1→F
+"UNITLESS"→Str2
+If (B=0) and (C=0) and (D=0)
+Return
+If (B=1) and (C=0) and (D=0)
+Then
+1→F
+"kg"→Str2
+If H=2
+Then
+0.45359237→F
+"lbm"→Str2
+End
+Return
+End
+If (B=0) and (C=1) and (D=0)
+Then
+1→F
+"m"→Str2
+If H=2
+Then
+0.3048→F
+"ft"→Str2
+End
+Return
+End
+If (B=0) and (C=0) and (D=1)
+Then
+1→F
+"s"→Str2
+If H=2
+Then
+1→F
+"s"→Str2
+End
+Return
+End
+If (B=0) and (C=1) and (D=⁻1)
+Then
+1→F
+"m/s"→Str2
+If H=2
+Then
+0.3048→F
+"ft/s"→Str2
+End
+Return
+End
+If (B=0) and (C=1) and (D=⁻2)
+Then
+1→F
+"m/s^2"→Str2
+If H=2
+Then
+0.3048→F
+"ft/s^2"→Str2
+End
+Return
+End
+If (B=1) and (C=1) and (D=⁻2)
+Then
+1→F
+"N"→Str2
+If H=2
+Then
+4.4482216152605→F
+"lbf"→Str2
+End
+Return
+End
+If (B=1) and (C=2) and (D=⁻2)
+Then
+1→F
+"J"→Str2
+If H=2
+Then
+1.3558179483314→F
+"ft*lbf"→Str2
+End
+Return
+End
+If (B=1) and (C=2) and (D=⁻3)
+Then
+1→F
+"W"→Str2
+If H=2
+Then
+745.69987158227→F
+"hp"→Str2
+End
+Return
+End
+If (B=1) and (C=⁻1) and (D=⁻2)
+Then
+1→F
+"Pa"→Str2
+If H=2
+Then
+6894.7572931684→F
+"psi"→Str2
+End
+Return
+End
+If (B=0) and (C=2) and (D=0)
+Then
+1→F
+"m^2"→Str2
+If H=2
+Then
+0.09290304→F
+"ft^2"→Str2
+End
+Return
+End
+If (B=0) and (C=3) and (D=0)
+Then
+1→F
+"m^3"→Str2
+If H=2
+Then
+0.028316846592→F
+"ft^3"→Str2
+End
+Return
+End
+If (B=1) and (C=⁻3) and (D=0)
+Then
+1→F
+"kg/m^3"→Str2
+If H=2
+Then
+16.01846337396→F
+"lbm/ft^3"→Str2
+End
+Return
+End
+If (B=0) and (C=0) and (D=⁻1)
+Then
+1→F
+"Hz"→Str2
+If H=2
+Then
+1→F
+"Hz"→Str2
+End
+Return
+End
+"kg^M m^L s^T"→Str2
+If H=2
+Then
+14.5939029372064^B*.3048^C→F
+"slug^M ft^L s^T"→Str2
+End
+Return

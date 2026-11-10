@@ -1,0 +1,664 @@
+0→Z
+Lbl AA
+Menu("QUANTITY","MASS",AD,"LENGTH",AE,"TIME",AF,"SPEED",AG,"ACCEL",AH,"FORCE",AI,"MORE / BACK",AB)
+Lbl AB
+Menu("MORE QUANTITIES","ENERGY",AJ,"POWER",AK,"PRESSURE",AL,"AREA",AM,"VOLUME",AN,"MORE",AC,"BACK",AA)
+Lbl AC
+Menu("MORE QUANTITIES","DENSITY",AO,"FREQUENCY",AP,"NO UNIT",AQ,"BACK",AB,"CANCEL",DD)
+Lbl AD
+1→Q
+Goto AR
+Lbl AE
+2→Q
+Goto AR
+Lbl AF
+3→Q
+Goto AR
+Lbl AG
+4→Q
+Goto AR
+Lbl AH
+5→Q
+Goto AR
+Lbl AI
+6→Q
+Goto AR
+Lbl AJ
+7→Q
+Goto AR
+Lbl AK
+8→Q
+Goto AR
+Lbl AL
+9→Q
+Goto AR
+Lbl AM
+10→Q
+Goto AR
+Lbl AN
+11→Q
+Goto AR
+Lbl AO
+12→Q
+Goto AR
+Lbl AP
+13→Q
+Goto AR
+Lbl AQ
+14→Q
+Goto AR
+Lbl AR
+If W=0
+Goto AS
+Goto AV
+Lbl AS
+Menu("UNIT SYSTEM","SI",AT,"IMPERIAL",AU,"BACK",AA,"CANCEL",DD)
+Lbl AT
+1→W
+Goto AV
+Lbl AU
+2→W
+Goto AV
+Lbl AV
+If Q=1
+Goto AW
+If Q=2
+Goto A4
+If Q=3
+Goto BE
+If Q=4
+Goto BM
+If Q=5
+Goto BS
+If Q=6
+Goto BW
+If Q=7
+Goto B2
+If Q=8
+Goto B8
+If Q=9
+Goto CE
+If Q=10
+Goto CL
+If Q=11
+Goto CR
+If Q=12
+Goto CZ
+If Q=13
+Goto C4
+If Q=14
+Goto C9
+Lbl AW
+If W=2
+Goto AX
+Menu("MASS / SI","kg",AY,"g",AZ,"mg",A0,"SYSTEM / BACK",AS)
+Lbl AX
+Menu("MASS / IMP","lbm",A1,"slug",A2,"oz",A3,"SYSTEM / BACK",AS)
+Lbl AY
+1→F
+"kg"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl AZ
+0.001→F
+"g"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl A0
+1e-06→F
+"mg"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl A1
+0.45359237→F
+"lbm"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl A2
+14.593902937206→F
+"slug"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl A3
+0.028349523125→F
+"oz"→Str2
+1→B
+0→C
+0→D
+1→Z
+Return
+Lbl A4
+If W=2
+Goto A5
+Menu("LENGTH / SI","m",A6,"cm",A7,"mm",A8,"km",A9,"SYSTEM / BACK",AS)
+Lbl A5
+Menu("LENGTH / IMP","ft",BA,"in",BB,"yd",BC,"mi",BD,"SYSTEM / BACK",AS)
+Lbl A6
+1→F
+"m"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl A7
+0.01→F
+"cm"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl A8
+0.001→F
+"mm"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl A9
+1000→F
+"km"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl BA
+0.3048→F
+"ft"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl BB
+0.0254→F
+"in"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl BC
+0.9144→F
+"yd"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl BD
+1609.344→F
+"mi"→Str2
+0→B
+1→C
+0→D
+1→Z
+Return
+Lbl BE
+If W=2
+Goto BF
+Menu("TIME / SI","s",BG,"min",BH,"hr",BI,"SYSTEM / BACK",AS)
+Lbl BF
+Menu("TIME / IMP","s",BJ,"min",BK,"hr",BL,"SYSTEM / BACK",AS)
+Lbl BG
+1→F
+"s"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BH
+60→F
+"min"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BI
+3600→F
+"hr"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BJ
+1→F
+"s"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BK
+60→F
+"min"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BL
+3600→F
+"hr"→Str2
+0→B
+0→C
+1→D
+1→Z
+Return
+Lbl BM
+If W=2
+Goto BN
+Menu("SPEED / SI","m/s",BO,"km/hr",BP,"SYSTEM / BACK",AS)
+Lbl BN
+Menu("SPEED / IMP","ft/s",BQ,"mph",BR,"SYSTEM / BACK",AS)
+Lbl BO
+1→F
+"m/s"→Str2
+0→B
+1→C
+⁻1→D
+1→Z
+Return
+Lbl BP
+0.27777777777778→F
+"km/hr"→Str2
+0→B
+1→C
+⁻1→D
+1→Z
+Return
+Lbl BQ
+0.3048→F
+"ft/s"→Str2
+0→B
+1→C
+⁻1→D
+1→Z
+Return
+Lbl BR
+0.44704→F
+"mph"→Str2
+0→B
+1→C
+⁻1→D
+1→Z
+Return
+Lbl BS
+If W=2
+Goto BT
+Menu("ACCEL / SI","m/s^2",BU,"SYSTEM / BACK",AS)
+Lbl BT
+Menu("ACCEL / IMP","ft/s^2",BV,"SYSTEM / BACK",AS)
+Lbl BU
+1→F
+"m/s^2"→Str2
+0→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl BV
+0.3048→F
+"ft/s^2"→Str2
+0→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl BW
+If W=2
+Goto BX
+Menu("FORCE / SI","N",BY,"kN",BZ,"SYSTEM / BACK",AS)
+Lbl BX
+Menu("FORCE / IMP","lbf",B0,"pdl",B1,"SYSTEM / BACK",AS)
+Lbl BY
+1→F
+"N"→Str2
+1→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl BZ
+1000→F
+"kN"→Str2
+1→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl B0
+4.4482216152605→F
+"lbf"→Str2
+1→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl B1
+0.138254954376→F
+"pdl"→Str2
+1→B
+1→C
+⁻2→D
+1→Z
+Return
+Lbl B2
+If W=2
+Goto B3
+Menu("ENERGY / SI","J",B4,"kJ",B5,"SYSTEM / BACK",AS)
+Lbl B3
+Menu("ENERGY / IMP","ft*lbf",B6,"BTU",B7,"SYSTEM / BACK",AS)
+Lbl B4
+1→F
+"J"→Str2
+1→B
+2→C
+⁻2→D
+1→Z
+Return
+Lbl B5
+1000→F
+"kJ"→Str2
+1→B
+2→C
+⁻2→D
+1→Z
+Return
+Lbl B6
+1.3558179483314→F
+"ft*lbf"→Str2
+1→B
+2→C
+⁻2→D
+1→Z
+Return
+Lbl B7
+1055.05585262→F
+"BTU"→Str2
+1→B
+2→C
+⁻2→D
+1→Z
+Return
+Lbl B8
+If W=2
+Goto B9
+Menu("POWER / SI","W",CA,"kW",CB,"SYSTEM / BACK",AS)
+Lbl B9
+Menu("POWER / IMP","hp",CC,"ft*lbf/s",CD,"SYSTEM / BACK",AS)
+Lbl CA
+1→F
+"W"→Str2
+1→B
+2→C
+⁻3→D
+1→Z
+Return
+Lbl CB
+1000→F
+"kW"→Str2
+1→B
+2→C
+⁻3→D
+1→Z
+Return
+Lbl CC
+745.69987158227→F
+"hp"→Str2
+1→B
+2→C
+⁻3→D
+1→Z
+Return
+Lbl CD
+1.3558179483314→F
+"ft*lbf/s"→Str2
+1→B
+2→C
+⁻3→D
+1→Z
+Return
+Lbl CE
+If W=2
+Goto CF
+Menu("PRESSURE / SI","Pa",CG,"kPa",CH,"MPa",CI,"SYSTEM / BACK",AS)
+Lbl CF
+Menu("PRESSURE / IMP","psi",CJ,"psf",CK,"SYSTEM / BACK",AS)
+Lbl CG
+1→F
+"Pa"→Str2
+1→B
+⁻1→C
+⁻2→D
+1→Z
+Return
+Lbl CH
+1000→F
+"kPa"→Str2
+1→B
+⁻1→C
+⁻2→D
+1→Z
+Return
+Lbl CI
+1000000→F
+"MPa"→Str2
+1→B
+⁻1→C
+⁻2→D
+1→Z
+Return
+Lbl CJ
+6894.7572931684→F
+"psi"→Str2
+1→B
+⁻1→C
+⁻2→D
+1→Z
+Return
+Lbl CK
+47.880258980336→F
+"psf"→Str2
+1→B
+⁻1→C
+⁻2→D
+1→Z
+Return
+Lbl CL
+If W=2
+Goto CM
+Menu("AREA / SI","m^2",CN,"cm^2",CO,"SYSTEM / BACK",AS)
+Lbl CM
+Menu("AREA / IMP","ft^2",CP,"in^2",CQ,"SYSTEM / BACK",AS)
+Lbl CN
+1→F
+"m^2"→Str2
+0→B
+2→C
+0→D
+1→Z
+Return
+Lbl CO
+0.0001→F
+"cm^2"→Str2
+0→B
+2→C
+0→D
+1→Z
+Return
+Lbl CP
+0.09290304→F
+"ft^2"→Str2
+0→B
+2→C
+0→D
+1→Z
+Return
+Lbl CQ
+0.00064516→F
+"in^2"→Str2
+0→B
+2→C
+0→D
+1→Z
+Return
+Lbl CR
+If W=2
+Goto CS
+Menu("VOLUME / SI","m^3",CT,"L",CU,"mL",CV,"SYSTEM / BACK",AS)
+Lbl CS
+Menu("VOLUME / IMP","ft^3",CW,"in^3",CX,"US gal",CY,"SYSTEM / BACK",AS)
+Lbl CT
+1→F
+"m^3"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CU
+0.001→F
+"L"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CV
+1e-06→F
+"mL"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CW
+0.028316846592→F
+"ft^3"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CX
+1.6387064e-05→F
+"in^3"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CY
+0.003785411784→F
+"US gal"→Str2
+0→B
+3→C
+0→D
+1→Z
+Return
+Lbl CZ
+If W=2
+Goto C0
+Menu("DENSITY / SI","kg/m^3",C1,"g/cm^3",C2,"SYSTEM / BACK",AS)
+Lbl C0
+Menu("DENSITY / IMP","lbm/ft^3",C3,"SYSTEM / BACK",AS)
+Lbl C1
+1→F
+"kg/m^3"→Str2
+1→B
+⁻3→C
+0→D
+1→Z
+Return
+Lbl C2
+1000→F
+"g/cm^3"→Str2
+1→B
+⁻3→C
+0→D
+1→Z
+Return
+Lbl C3
+16.01846337396→F
+"lbm/ft^3"→Str2
+1→B
+⁻3→C
+0→D
+1→Z
+Return
+Lbl C4
+If W=2
+Goto C5
+Menu("FREQUENCY / SI","Hz",C6,"kHz",C7,"SYSTEM / BACK",AS)
+Lbl C5
+Menu("FREQUENCY / IMP","Hz",C8,"SYSTEM / BACK",AS)
+Lbl C6
+1→F
+"Hz"→Str2
+0→B
+0→C
+⁻1→D
+1→Z
+Return
+Lbl C7
+1000→F
+"kHz"→Str2
+0→B
+0→C
+⁻1→D
+1→Z
+Return
+Lbl C8
+1→F
+"Hz"→Str2
+0→B
+0→C
+⁻1→D
+1→Z
+Return
+Lbl C9
+If W=2
+Goto DA
+Menu("NO UNIT / SI","unitless",DB,"SYSTEM / BACK",AS)
+Lbl DA
+Menu("NO UNIT / IMP","unitless",DC,"SYSTEM / BACK",AS)
+Lbl DB
+1→F
+"unitless"→Str2
+0→B
+0→C
+0→D
+1→Z
+Return
+Lbl DC
+1→F
+"unitless"→Str2
+0→B
+0→C
+0→D
+1→Z
+Return
+Lbl DD
+Return

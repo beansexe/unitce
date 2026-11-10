@@ -1,0 +1,71 @@
+""→Str1
+1→V
+0→Z
+Lbl AA
+ClrHome
+Disp "VALUE (OPTIONAL)","ENTER ALONE = 1","(-): SIGN  DEL: ERASE","CLEAR: CANCEL"
+If length(Str1)>0
+Output(6,1,Str1)
+Output(7,1,"SIGN:")
+Output(7,7,V)
+Lbl AB
+getKey→K
+If K=0
+Goto AB
+If K=45
+Return
+If K=105
+Goto AC
+If K=104
+⁻V→V
+If K=104
+Goto AA
+If K=23
+Then
+If length(Str1)>0
+Then
+If length(Str1)=1
+Then
+""→Str1
+Else
+sub(Str1,1,length(Str1)-1)→Str1
+End
+End
+End
+If K=23
+Goto AA
+If length(Str1)≥14
+Goto AB
+If K=103
+Then
+If inString(Str1,".")=0
+"."→Str0
+If inString(Str1,".")=0
+Str1+Str0→Str1
+End
+If K=103
+Goto AA
+{102,92,93,94,82,83,84,72,73,74}→ʟUCK
+0→J
+For(I,1,10)
+If K=ʟUCK(I)
+Then
+I→J
+End
+End
+If J=0
+Goto AB
+Str1+sub("0123456789",J,1)→Str1
+Goto AA
+Lbl AC
+1→N
+If length(Str1)>0
+Then
+If Str1="."
+Then
+"0"→Str1
+End
+V*expr(Str1)→N
+End
+1→Z
+Return
